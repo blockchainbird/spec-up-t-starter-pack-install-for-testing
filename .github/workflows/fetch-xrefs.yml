@@ -1,0 +1,23 @@
+name: Fetch and Push Xrefs
+
+on: [push, workflow_dispatch]
+
+jobs:
+  fetch-xrefs-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Fetch Xrefs
+        run: |
+          echo "start fetching xrefs"
+          node -e "require('spec-up-t/src/get-xrefs-data.js').getXrefsData()"
+      
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Update Xrefs data" || echo "No changes to commit"
+          git push
