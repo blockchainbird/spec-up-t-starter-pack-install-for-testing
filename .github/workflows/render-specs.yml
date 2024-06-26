@@ -36,6 +36,10 @@ jobs:
           echo "end render"
           rm -rf node_modules
 
+      - name: Echo spec-up-t version
+        run: |
+          npm list spec-up-t
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
