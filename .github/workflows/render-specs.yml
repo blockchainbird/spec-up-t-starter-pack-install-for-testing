@@ -2,9 +2,9 @@
 name: spec-up-t-render
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 jobs:
