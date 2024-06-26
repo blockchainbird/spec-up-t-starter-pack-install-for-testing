@@ -1,4 +1,4 @@
-name: Fetch and Push Xrefs
+name: fetch and push xrefs
 
 on: [workflow_dispatch]
 
